@@ -1,0 +1,57 @@
+{
+	"name": "boogle-keep",
+	"displayName": "boogle-keep",
+	"description": "A note extension for VSCode",
+	"version": "0.0.1",
+	"engines": {
+		"vscode": "^1.52.0"
+	},
+	"categories": [
+		"Other"
+	],
+	"activationEvents": [
+		"onCommand:boogle-keep.helloWorld"
+	],
+	"main": "./src/extension.js",
+	"contributes": {
+		"viewsContainers": {
+            "activitybar": [
+                {
+                    "id": "boogle-keep-container",
+                    "title": "Boogle Keep",
+                    "icon": "resources/contract.svg"
+                }
+            ]
+		},
+		"views": {
+            "boogle-keep-container": [
+                {
+                    "id": "boogle-keep-view",
+                    "name": "BoogleKeep"
+                }
+            ]
+        },
+		"commands": [
+			{
+				"command": "boogle-keep.helloWorld",
+				"title": "Boogle Keep"
+			}
+		]
+	},
+	"scripts": {
+		"lint": "eslint .",
+		"pretest": "npm run lint",
+		"test": "node ./test/runTest.js"
+	},
+	"devDependencies": {
+		"@types/vscode": "^1.52.0",
+		"@types/glob": "^7.1.3",
+		"@types/mocha": "^8.0.4",
+		"@types/node": "^12.11.7",
+		"eslint": "^7.15.0",
+		"glob": "^7.1.6",
+		"mocha": "^8.1.3",
+		"typescript": "^4.1.2",
+		"vscode-test": "^1.4.1"
+	}
+}
